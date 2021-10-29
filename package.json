@@ -1,0 +1,23 @@
+{
+  "name": "projetoagendasalaodebeleza",
+  "version": "1.0.0",
+  "description": "projeto de uma agenda eletrónica para salão de beleza utilizando Javascript, HTML, CSS e Node.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Victor2752/ProjetoAgendaSalaoDeBeleza.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Victor2752/ProjetoAgendaSalaoDeBeleza/issues"
+  },
+  "homepage": "https://github.com/Victor2752/ProjetoAgendaSalaoDeBeleza#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
