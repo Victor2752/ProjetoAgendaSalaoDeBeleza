@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="containerTituloGrande">
+        <h1 class="tituloGrande">Serviços</h1>
+    </div>
+
+    <div class="containerAdicionarOuRemover">
+
+        <form action="/servicos/adicionar" method="POST" class="containerAdicionar">
+            <div class="containerTituloPequeno">
+                <h2 class="tituloPequeno">Adicionar Serviço</h2>
+            </div>
+            <div class="containerAcao">
+                <div class="containerInput">
+                    <label for="inputServico">Nome do serviço:</label>
+                    <input type="text" class="input" id="inputServico" name="inputServico" required>
+                </div>
+                <div class="containerInput">
+                    <label for="selectFuncao">Nome da função:</label>
+                    <select class="select" name="selectFuncao" required>
+                        <option value="0">Selecione a função</option>
+                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
+                        {{#each servicos}}
+                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button type="submit" class="btn">Adicionar</a>
+            </div>
+        </form>
+
+        <form action="/servicos/remover" method="POST" class="containerRemover">
+            <div class="containerTituloPequeno">
+                <h2 class="tituloPequeno">Remover Serviço</h2>
+            </div>
+            <div class="containerAcao">
+                <div class="containerInput">
+                    <label for="selectServico">Nome do serviço:</label>
+                    <select class="select" name="selectServico" required>
+                        <option value="0">Selecione o serviço</option>
+                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
+                        {{#each servicos}}
+                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <button type="submit" class="btn">Remover</button>
+            </div>
+        </form>
+
+    </div>
+
+</div>
