@@ -1,3 +1,15 @@
+p{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+}
+h3 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 18px;
+}
+h1 {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 28px;
+}
 body {
     padding: 0;
     margin: 0;
@@ -49,6 +61,22 @@ div {
     border-radius: 15px;
     padding: 20px;
 }
+.Box {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #7D9AFF;
+}
+.menuRow {
+    width: 98%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7D9AFF;
+    margin-block: 5px;
+}
 
 .inputLabel {
     width: 100%;
@@ -66,20 +94,21 @@ div {
     padding-left: 1%;
     margin: 0px 0px;
 }
-.input {
-    width: 99%;
+.whiteBox {
+    width: 97%;
     display: flex;
     align-items: space-between;
     justify-content: center;
     background-color: #ffffff;
     border-radius: 10px;
     padding: 5px 0px;
-    margin: 5px 0px;
+    margin: 5px 10px;
 }
-.input p {
+.whiteBox p {
     color: #7D9AFF;
+    margin: 5px;
 }
-.input h3 {
+.whiteBox h3 {
     color: #7D9AFF;
     margin: 0;
 }
