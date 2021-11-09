@@ -1,10 +1,10 @@
 p{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
 }
 h3 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 18px;
+    font-size: 22px;
 }
 h1 {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -61,6 +61,15 @@ div {
     border-radius: 15px;
     padding: 20px;
 }
+.gridBox {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #7D9AFF;
+    border-radius: 15px;
+    padding: 20px;
+}
 .Box {
     width: 80%;
     display: flex;
@@ -86,7 +95,7 @@ div {
     background-color: #9CB2FF;
     border-radius: 10px;
     padding: 10px 0px;
-    margin: 5px 0;
+    margin: 5px 10px;
 }
 .inputLabel p {
     color: #ffffff;
@@ -105,6 +114,8 @@ div {
     margin: 5px 10px;
 }
 .whiteBox p {
+    width: 100%;
+    text-align: center;
     color: #7D9AFF;
     margin: 5px;
 }
