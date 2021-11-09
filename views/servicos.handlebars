@@ -12,7 +12,7 @@
             <div class="containerAcao">
                 <div class="containerInput">
                     <label for="inputServico">Nome do serviço:</label>
-                    <input type="text" class="input" id="inputServico" name="inputServico" required>
+                    <input type="text" class="input" name="inputServico" required>
                 </div>
                 <div class="containerInput">
                     <label for="selectFuncao">Nome da função:</label>
@@ -20,8 +20,8 @@
                         <option value="0">Selecione a função</option>
                         <!--comando do handlebars: para cada serviço dentro do banco, crie um option
                         com o value sendo o id e com o conteúdo sendo o nome do serviço-->
-                        {{#each servicos}}
-                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
+                        {{#each funcoes}}
+                        <option value="{{dataValues.nome}}">{{{dataValues.nome}}}</option>
                         {{/each}}
                     </select>
                 </div>

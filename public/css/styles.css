@@ -104,6 +104,10 @@ label {
     margin: 0.5em 0.5em 1em 0.5em;
 }
 
+input:-webkit-autofill {
+    -webkit-text-fill-color: #7a89c2 !important;
+}
+
 .select {
     color: #7a89c2;
     font-weight: bolder;

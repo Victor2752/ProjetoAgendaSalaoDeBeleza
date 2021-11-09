@@ -12,7 +12,18 @@
             <div class="containerAcao">
                 <div class="containerInput">
                     <label for="inputFuncionario">Nome do funcionário:</label>
-                    <input type="text" class="input" id="inputFuncionario" name="inputFuncionario" required>
+                    <input type="text" class="input" name="inputFuncionario" required>
+                </div>
+                <div class="containerInput">
+                    <label for="selectFuncao">Nome da função:</label>
+                    <select class="select" name="selectFuncao" required>
+                        <option value="0">Selecione a função</option>
+                        <!--comando do handlebars: para cada funcionário dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do funcionário-->
+                        {{#each funcoes}}
+                        <option value="{{dataValues.nome}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
                 </div>
                 <button type="submit" class="btn">Adicionar</a>
             </div>

@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 //rota adicionar funções
-router.post("funcoes/adicionar", (req, res) => {
+router.post("/adicionar", (req, res) => {
     //adiciona uma função no banco com o nome recebido na requisição do formulario
     Funcao.create({
         nome: req.body.inputFuncao
@@ -28,10 +28,9 @@ router.post("funcoes/adicionar", (req, res) => {
 });
 
 //rota remover funções
-router.post("funcoes/remover", (req, res) => {
+router.post("/remover", (req, res) => {
     //remove a função do banco com o nome recebido na requisição do formulário
     Funcao.destroy({where: {"id": req.body.selectFuncao}}).then(function() {
-        console.log(req.body.selectFuncao);
         Funcao.findAll().then(function(funcoes) {
             res.render("funcoes", {funcoes: funcoes});
         });
