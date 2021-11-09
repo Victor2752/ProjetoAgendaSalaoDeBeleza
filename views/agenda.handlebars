@@ -3,14 +3,10 @@
         <h1 class="tituloGrande">Agendar Serviço</h1>
     </div>
 
-    <div class="containerAdicionarOuRemover">
-
-        <form action="/funcoes/adicionar" method="POST" class="containerAdicionar">
-            <div class="containerTituloPequeno">
-                <h2 class="tituloPequeno">Agendar Serviço</h2>
-            </div>
-            <div class="containerAcaoRow">
-                <div class="containerInput">
+    <form action="/agenda/adicionar" method="POST" class="containerAdicionarAgendamento">
+        <div class="containerLinhaAgendamento">
+            <div class="containerColunaAgendamento1">
+                <div class="containerInputAgendamento">
                     <label for="inputFuncao">Nome do serviço:</label>
                     <select class="select" name="selectServico" required>
                         <option value="0">Selecione o serviço</option>
@@ -21,7 +17,7 @@
                         {{/each}}
                     </select>
                 </div>
-                <div class="containerInput">
+                <div class="containerInputAgendamento">
                     <label for="inputFuncao">Selecione o Funcionario:</label>
                     <select class="select" name="selectFuncionario" required>
                         <option value="0">Nome do Funcionario</option>
@@ -32,46 +28,34 @@
                         {{/each}}
                     </select>
                 </div>
-                <div class="containerInput">
+                <div class="containerInputAgendamento">
                     <label for="inputServico">Nome do Cliente:</label>
                     <input type="text" class="input" name="inputCliente" required>
                 </div>
-                <div class="containerInput">
+            </div>
+
+            <div class="containerColunaAgendamento2">
+                <div class="containerInputAgendamento">
                     <label for="inputServico">Data do serviço:</label>
-                    <input type="text" class="input" name="inputData" required>
+                    <input type="date" class="inputData" name="inputData" required>
                 </div>
-                <div class="containerInput">
+                <div class="containerInputAgendamento">
                     <label for="inputServico">Hora Inicio:</label>
-                    <input type="text" class="input" name="inputHoraInicio" required>
+                    <input type="time" class="inputData" name="inputHoraInicio" required>
                 </div>
-                <div class="containerInput">
+                <div class="containerInputAgendamento">
                     <label for="inputServico">Hora Fim:</label>
-                    <input type="text" class="input" name="inputHoraFim" required>
+                    <input type="time" class="inputData" name="inputHoraFim" required>
                 </div>
-                <button type="submit" class="btn">Agendar Serviço</a>
             </div>
-        </form>
+        </div>
 
-        <form action="/funcoes/remover" method="POST" class="containerRemover">
-            <div class="containerTituloPequeno">
-                <h2 class="tituloPequeno">Remover Função</h2>
-            </div>
-            <div class="containerAcao">
-                <div class="containerInput">
-                    <label for="select">Nome da função:</label>
-                    <select class="select" name="selectFuncao" required>
-                        <option value="0">Selecione a função</option>
-                        <!--comando do handlebars: para cada função dentro do banco, crie um option
-                        com o value sendo o id e com o conteúdo sendo o nome da funcão-->
-                        {{#each funcoes}}
-                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
-                        {{/each}}
-                    </select>
-                </div>
-                <button type="submit" class="btn">Remover</button>
-            </div>
-        </form>
+        <div class="containerLinhaAgendamento">
+            <button type="submit" class="btn btnAgendamento">Agendar</a>
+        </div>
 
-    </div>
+
+
+    </form>
 
 </div>
