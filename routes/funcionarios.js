@@ -39,7 +39,7 @@ router.post("/adicionar", (req, res) => {
 //rota remover funcionarios
 router.post("/remover", (req, res) => {
     //remove o funcionário do banco com o nome recebido na requisição do formulário
-    Funcionario.destroy({ where: { "id": req.body.selectFuncionarios } }).then(function () {
+    Funcionario.destroy({ where: { "id": req.body.selectFuncionario } }).then(function () {
         //encontra funcionarios e funções do banco e renderiza a página "funcoes" passando dados do banco para ela
         Funcionario.findAll().then(function (funcionarios) {
             Funcao.findAll().then(function (funcoes) {
