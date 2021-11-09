@@ -74,6 +74,17 @@ body {
     align-items: center;
 }
 
+.containerAcaoRow {
+    width: 97%;
+    height: fit-content;
+    padding: 0.5em;
+    background-color: #7D9AFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .containerInput {
     width: 90%;
     background-color: #9CB2FF;
