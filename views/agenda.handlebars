@@ -7,7 +7,7 @@
 
         <form action="/funcoes/adicionar" method="POST" class="containerAdicionar">
             <div class="containerTituloPequeno">
-                <h2 class="tituloPequeno">Selecionar</h2>
+                <h2 class="tituloPequeno">Agendar Serviço</h2>
             </div>
             <div class="containerAcaoRow">
                 <div class="containerInput">
@@ -22,54 +22,33 @@
                     </select>
                 </div>
                 <div class="containerInput">
+                    <label for="inputFuncao">Selecione o Funcionario:</label>
+                    <select class="select" name="selectFuncionario" required>
+                        <option value="0">Nome do Funcionario</option>
+                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
+                        {{#each funcionarios}}
+                        <option value="{{dataValues.funcao}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="containerInput">
                     <label for="inputServico">Nome do Cliente:</label>
                     <input type="text" class="input" name="inputCliente" required>
                 </div>
                 <div class="containerInput">
-                    <label for="inputFuncao">Selecione a Data:</label>
-                    <select class="select" name="selectData" required>
-                        <option value="0">Data do serviço</option>
-                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
-                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
-                        {{#each Data}}
-                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
-                        {{/each}}
-                    </select>
+                    <label for="inputServico">Data do serviço:</label>
+                    <input type="text" class="input" name="inputData" required>
                 </div>
                 <div class="containerInput">
-                    <label for="inputFuncao">Selecione o horário:</label>
-                    <select class="select" name="selectServico" required>
-                        <option value="0">Horario início</option>
-                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
-                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
-                        {{#each funcionario}}
-                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
-                        {{/each}}
-                    </select>
+                    <label for="inputServico">Hora Inicio:</label>
+                    <input type="text" class="input" name="inputHoraInicio" required>
                 </div>
                 <div class="containerInput">
-                    <label for="inputFuncao">Selecione o Funcionario:</label>
-                    <select class="select" name="selectServico" required>
-                        <option value="0">Nome do Funcionario</option>
-                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
-                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
-                        {{#each funcionario}}
-                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
-                        {{/each}}
-                    </select>
+                    <label for="inputServico">Hora Fim:</label>
+                    <input type="text" class="input" name="inputHoraFim" required>
                 </div>
-                <div class="containerInput">
-                    <label for="inputFuncao">Selecione o Funcionario:</label>
-                    <select class="select" name="selectServico" required>
-                        <option value="0">Nome do Funcionario</option>
-                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
-                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
-                        {{#each funcionario}}
-                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
-                        {{/each}}
-                    </select>
-                </div>
-                <button type="submit" class="btn">Adicionar</a>
+                <button type="submit" class="btn">Agendar Serviço</a>
             </div>
         </form>
 
