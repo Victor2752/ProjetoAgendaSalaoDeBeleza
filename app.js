@@ -14,6 +14,7 @@ const servicos = require("./routes/servicos");
 const funcoes = require("./routes/funcoes");
 const funcionarios = require("./routes/funcionarios");
 const agenda = require("./routes/agenda");
+const home = require("./routes/home");
 
 //configuração handlebars
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
@@ -25,6 +26,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 
 //Rotas
+app.use("/", home);
 app.use("/servicos", servicos);
 app.use("/funcoes", funcoes);
 app.use("/funcionarios", funcionarios);
