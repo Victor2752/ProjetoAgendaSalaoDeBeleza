@@ -7,11 +7,13 @@ const bodyParser = require('body-parser');
 const Servico = require('./models/Servico');
 const Funcao = require('./models/Funcao');
 const Funcionario = require('./models/Funcionario');
+const Agenda = require('./models/Agenda');
 
 //importar rotas
 const servicos = require("./routes/servicos");
 const funcoes = require("./routes/funcoes");
 const funcionarios = require("./routes/funcionarios");
+const agenda = require("./routes/agenda");
 
 //configuração handlebars
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
@@ -26,11 +28,7 @@ app.use(express.json());
 app.use("/servicos", servicos);
 app.use("/funcoes", funcoes);
 app.use("/funcionarios", funcionarios);
-
-//rota agenda
-app.get("/agenda", (req, res) => {
-    res.render("agenda");
-});
+app.use("/agenda", agenda);
 
 //ouvindo a porta 8081
 app.listen(8081, function () {

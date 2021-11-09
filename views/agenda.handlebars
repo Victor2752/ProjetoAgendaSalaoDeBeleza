@@ -1,1 +1,61 @@
-<h1>Agenda</h1>
+<div class="container">
+    <div class="containerTituloGrande">
+        <h1 class="tituloGrande">Agendar Serviço</h1>
+    </div>
+
+    <form action="/agenda/adicionar" method="POST" class="containerAdicionarAgendamento">
+        <div class="containerLinhaAgendamento">
+            <div class="containerColunaAgendamento1">
+                <div class="containerInputAgendamento">
+                    <label for="inputFuncao">Nome do serviço:</label>
+                    <select class="select" name="selectServico" required>
+                        <option value="0">Selecione o serviço</option>
+                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
+                        {{#each servicos}}
+                        <option value="{{dataValues.id}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="containerInputAgendamento">
+                    <label for="inputFuncao">Selecione o Funcionario:</label>
+                    <select class="select" name="selectFuncionario" required>
+                        <option value="0">Nome do Funcionario</option>
+                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
+                        {{#each funcionarios}}
+                        <option value="{{dataValues.funcao}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                <div class="containerInputAgendamento">
+                    <label for="inputServico">Nome do Cliente:</label>
+                    <input type="text" class="input" name="inputCliente" required>
+                </div>
+            </div>
+
+            <div class="containerColunaAgendamento2">
+                <div class="containerInputAgendamento">
+                    <label for="inputServico">Data do serviço:</label>
+                    <input type="date" class="inputData" name="inputData" required>
+                </div>
+                <div class="containerInputAgendamento">
+                    <label for="inputServico">Hora Inicio:</label>
+                    <input type="time" class="inputData" name="inputHoraInicio" required>
+                </div>
+                <div class="containerInputAgendamento">
+                    <label for="inputServico">Hora Fim:</label>
+                    <input type="time" class="inputData" name="inputHoraFim" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="containerLinhaAgendamento">
+            <button type="submit" class="btn btnAgendamento">Agendar</a>
+        </div>
+
+
+
+    </form>
+
+</div>
