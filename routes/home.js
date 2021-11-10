@@ -11,37 +11,38 @@ const bodyParser = require('body-parser');
 
 router.get("/", (req, res) => {
     //encontra agenda e funções do banco e renderiza a página "servico" passando dados do banco para ela
-    Agenda.findAll().then(function (agenda) {
         Funcionario.findAll().then(function (funcionarios) {
             Servico.findAll().then(function (servicos) {
-                res.render("home", { agenda: agenda, funcionarios: funcionarios, servicos: servicos,});
+                res.render("home", {  funcionarios: funcionarios, servicos: servicos,});
             });
         });
-    });
-});
 
-router.get("/visualizar", (req, res) => {
-    Agenda.findAll().then(function (agenda) {
-        Funcionario.findAll().then(function (funcionarios) {
-            Servico.findAll().then(function (servicos) {
-                res.render("home", { agenda: agenda, funcionarios: funcionarios, servicos: servicos,});
-            });
-        });
-    });
 });
 
 router.post("/visualizar", (req, res) => {
-    //adiciona um funcionário no banco com o nome recebido na requisição do formulário
-    Agenda.create({
-        servico: req.body.selectServico,
-        funcionario: req.body.selectFuncionario,
-        cliente: req.body.inputCliente,
-        data: req.body.inputData,
-        horainicio: req.body.inputHoraInicio,
-        horafim: req.body.inputHoraFim
-    }).then(function () {
-        //encontra funcionarios e funções do banco e renderiza a página "funcoes" passando dados do banco para ela
-        Agenda.findAll().then(function (agenda) {
+    Agenda.findAll({
+        where: {
+            funcionario: req.body.selectFuncionario,
+            data: req.body.inputData
+        }
+    }).then(function (agenda) {
+        Funcionario.findAll().then(function (funcionarios) {
+            Servico.findAll().then(function (servicos) {
+                res.render("home", { agenda: agenda, funcionarios: funcionarios, servicos: servicos,});
+            });
+        });
+    });
+});
+
+
+router.get("/deletar/:id/:funcionario/:data", (req, res) => {
+    Agenda.destroy({ where: { 'id': req.params.id } }).then(function () {
+        Agenda.findAll({
+            where: {
+                funcionario: req.params.funcionario,
+                data: req.params.data
+            }
+        }).then(function (agenda) {
             Funcionario.findAll().then(function (funcionarios) {
                 Servico.findAll().then(function (servicos) {
                     res.render("home", { agenda: agenda, funcionarios: funcionarios, servicos: servicos,});
@@ -49,8 +50,46 @@ router.post("/visualizar", (req, res) => {
             });
         });
     }).catch(function (erro) {
-        res.send("Falha ao agendar servico: " + erro);
+        res.send("Falha ao adicionar o serviço: " + erro);
     });
 });
 
+
 module.exports = router;
+
+
+
+
+// router.get("/visualizar", (req, res) => {
+//     Agenda.findAll().then(function (agenda) {
+//         Funcionario.findAll().then(function (funcionarios) {
+//             Servico.findAll().then(function (servicos) {
+//                 res.render("home", { agenda: agenda, funcionarios: funcionarios, servicos: servicos,});
+//             });
+//         });
+//     });
+// });
+
+
+// router.post("/visualizar", (req, res) => {
+    //     //adiciona um funcionário no banco com o nome recebido na requisição do formulário
+    //     Agenda.create({
+        //         servico: req.body.selectServico,
+        //         funcionario: req.body.selectFuncionario,
+        //         cliente: req.body.inputCliente,
+        //         data: req.body.inputData,
+        //         horainicio: req.body.inputHoraInicio,
+        //         horafim: req.body.inputHoraFim
+        //     }).then(function () {
+            //         //encontra funcionarios e funções do banco e renderiza a página "funcoes" passando dados do banco para ela
+            //         Agenda.findAll().then(function (agenda) {
+                //             Funcionario.findAll().then(function (funcionarios) {
+                    //                 Servico.findAll().then(function (servicos) {
+                        //                     res.render("home", { agenda: agenda, funcionarios: funcionarios, servicos: servicos,});
+                        //                 });
+                        //             });
+                        //         });
+                        //     }).catch(function (erro) {
+                            //         res.send("Falha ao agendar servico: " + erro);
+                            //     });
+                            // });

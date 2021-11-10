@@ -9,6 +9,6 @@ const Servico = db.sequelize.define('servicos', {
     }
 });
 
-Servico.sync({force: true});
+// Servico.sync({force: true});
 
 module.exports = Servico;

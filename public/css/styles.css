@@ -187,6 +187,16 @@ input:-webkit-autofill {
     width: 95%;
 }
 
+.btnDeletar {
+    border: solid #a83b3b 5px;
+    background-color: #e64f4f;
+}
+
+.btnEditar {
+    border: solid #2c4fce 5px;
+    background-color: #587cff;
+}
+
 .inputData {
     color: #7a89c2;
     font-weight: bolder;
