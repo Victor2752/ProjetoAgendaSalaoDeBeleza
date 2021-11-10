@@ -1,0 +1,81 @@
+<style>
+    th,
+    td {
+        border-bottom: 1px solid #9CB2FF;
+        text-align: center;
+        color: #000000;
+    }
+    table{
+        margin: 20px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        padding:5px;
+    }
+    td{
+        background-color: #E5EBFF;
+    }
+</style>
+
+<div class="container">
+    <div class="containerTituloGrande">
+        <h1 class="tituloGrande">Visualizar Agenda</h1>
+    </div>
+
+    <form action="/visualizar" method="POST" class="containerAdicionarAgendamento">
+        <div class="containerLinhaAgendamento">
+            <div class="containerColunaAgendamento1">
+                <div class="containerInputAgendamento">
+                    <label for="inputFuncao">Selecione o Funcionario:</label>
+                    <select class="select" name="selectFuncionario" required>
+                        <option value="0">Nome do Funcionario</option>
+                        <!--comando do handlebars: para cada serviço dentro do banco, crie um option
+                        com o value sendo o id e com o conteúdo sendo o nome do serviço-->
+                        {{#each funcionarios}}
+                            <option value="{{dataValues.nome}}">{{{dataValues.nome}}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+            </div>
+            <div class="containerColunaAgendamento2">
+                <div class="containerInputAgendamento">
+                    <label for="inputData">Data do serviço:</label>
+                    <input type="date" class="inputData" name="inputData" required>
+                </div>
+            </div>
+        </div>
+        <div class="containerLinhaAgendamento">
+            <button type="submit" class="btn btnAgendamento">Visualizar</a>
+        </div>
+    </form>
+    
+    {{!-- {{> agenda}}
+    <div class="containerTituloGrande">
+        <h2 class="tituloPequeno">{{dataValues.funcionario}} - {{dataValues.data}}</h2>
+    </div> --}}
+
+    <div class="containerAdicionarAgendamento" style="margin-top: 10px;">
+        <table style="width:95%;">
+            <tr>
+                <th>Cliente</th>
+                <th>Funcionario</th>
+                <th>Serviço</th>
+                <th>Horário</th>
+                <th><a href="/agenda"><button class="btn btnEditar">Adicionar</button></a></th>
+            </tr>
+            {{#each agenda}}
+            <tr>
+                <td>{{dataValues.cliente}}</td>
+                <td>{{dataValues.funcionario}}</td>
+                <td>{{dataValues.servico}}</td>
+                <td>{{dataValues.horainicio}} - {{dataValues.horafim}}</td>
+                <td>
+                    <a href="/deletar/{{dataValues.id}}/{{dataValues.funcionario}}/{{dataValues.data}}">
+                        <button class="btn btnDeletar">Deletar</button>
+                    </a>
+                </td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+
+</div>

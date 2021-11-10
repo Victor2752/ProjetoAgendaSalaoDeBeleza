@@ -1,0 +1,227 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 50%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerTituloGrande {
+    width: 95%;
+    height: 5em;
+    background-color: #7D9AFF;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-block: 10px;
+}
+
+.tituloGrande, .tituloPequeno {
+    color: white;
+}
+
+.containerAdicionarOuRemover {
+    display: flex;
+    justify-content: space-between;
+    width: 97%;
+}
+
+.containerAdicionar, .containerRemover {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.containerTituloPequeno {
+    width: 97%;
+    height: fit-content;
+    padding: 0.5em;
+    background-color: #7D9AFF;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.containerAcao {
+    width: 97%;
+    height: fit-content;
+    padding: 0.5em;
+    background-color: #7D9AFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerAcaoRow {
+    width: 97%;
+    height: fit-content;
+    padding: 0.5em;
+    background-color: #7D9AFF;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInput {
+    width: 90%;
+    background-color: #9CB2FF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0 0.25em 0;
+}
+
+label {
+    align-self: flex-start;
+    color: white;
+    font-weight: bolder;
+    margin: 0.5em 0.5em 0 1em;
+}
+
+.input {
+    color: #7a89c2;
+    font-weight: bolder;
+    width: 90%;
+    height: 1.75em;
+    border-radius: 10px;
+    border-style: none;
+    text-align: center;
+    outline: none;
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+input:-webkit-autofill {
+    -webkit-text-fill-color: #7a89c2 !important;
+}
+
+.select {
+    color: #7a89c2;
+    font-weight: bolder;
+    width: 90%;
+    height: 1.75em;
+    border-radius: 10px;
+    border-style: none;
+    text-align: center;
+    outline: none;
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.btn {
+    width: 90%;
+    border: solid #6C84D9 5px;
+    padding: 0.25em;
+    border-radius: 10px;
+    background-color: #6F88E0;
+    color: white;
+    font-weight: bolder;
+    margin: 1.25em 0;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Página Agendameto */
+
+.containerAdicionarAgendamento {
+    width: 95%;
+    background-color: #7D9AFF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.containerLinhaAgendamento {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.containerColunaAgendamento {
+    width: 46%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerInputAgendamento {
+    width: 100%;
+    background-color: #9CB2FF;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0 0.25em 0;
+}
+
+.btnAgendamento {
+    width: 95%;
+}
+
+.btnDeletar {
+    border: solid #a83b3b 5px;
+    background-color: #e64f4f;
+}
+
+.btnEditar {
+    border: solid #2c4fce 5px;
+    background-color: #587cff;
+}
+
+.inputData {
+    color: #7a89c2;
+    font-weight: bolder;
+    width: 90%;
+    height: 1.75em;
+    padding-left: 2em;
+    border-radius: 10px;
+    border-style: none;
+    text-align: center;
+    outline: none;
+    margin: 0.5em 0.5em 1em 0.5em;
+}
+
+.containerColunaAgendamento1 {
+    width: 62%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.containerColunaAgendamento2 {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
