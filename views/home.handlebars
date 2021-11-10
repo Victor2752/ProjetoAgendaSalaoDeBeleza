@@ -1,10 +1,18 @@
 <style>
-    table,
     th,
     td {
-        border: 1px solid #ffffff;
+        border-bottom: 1px solid #9CB2FF;
         text-align: center;
-        color: #ffffff;
+        color: #000000;
+    }
+    table{
+        margin: 20px;
+        border-radius: 15px;
+        background-color: #ffffff;
+        padding:5px;
+    }
+    td{
+        background-color: #E5EBFF;
     }
 </style>
 
@@ -39,24 +47,25 @@
             <button type="submit" class="btn btnAgendamento">Visualizar</a>
         </div>
     </form>
-
-    {{!-- <div class="containerTituloGrande">
-        <h2 class="tituloPequeno">{{agenda.funcionario}} - {{agenda.data}}</h2>
+    
+    {{!-- {{> agenda}}
+    <div class="containerTituloGrande">
+        <h2 class="tituloPequeno">{{dataValues.funcionario}} - {{dataValues.data}}</h2>
     </div> --}}
 
     <div class="containerAdicionarAgendamento" style="margin-top: 10px;">
-        <table style="width:98%">
+        <table style="width:95%;">
             <tr>
-                <th>Funcionario</th>
                 <th>Cliente</th>
+                <th>Funcionario</th>
                 <th>Serviço</th>
                 <th>Horário</th>
                 <th><a href="/agenda"><button class="btn btnEditar">Adicionar</button></a></th>
             </tr>
             {{#each agenda}}
             <tr>
-                <td>{{dataValues.funcionario}}</td>
                 <td>{{dataValues.cliente}}</td>
+                <td>{{dataValues.funcionario}}</td>
                 <td>{{dataValues.servico}}</td>
                 <td>{{dataValues.horainicio}} - {{dataValues.horafim}}</td>
                 <td>
