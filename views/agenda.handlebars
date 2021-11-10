@@ -6,7 +6,7 @@
     <form action="/agenda/adicionar" method="POST" class="containerAdicionarAgendamento">
         <div class="containerLinhaAgendamento">
             <div class="containerColunaAgendamento1">
-                <div class="containerInputAgendamento">
+                <div class="containerInput">
                     <label for="inputFuncao">Nome do serviço:</label>
                     <select class="select" name="selectServico" required>
                         <option value="0">Selecione o serviço</option>
@@ -17,7 +17,7 @@
                         {{/each}}
                     </select>
                 </div>
-                <div class="containerInputAgendamento">
+                <div class="containerInput">
                     <label for="inputFuncao">Selecione o Funcionario:</label>
                     <select class="select" name="selectFuncionario" required>
                         <option value="0">Nome do Funcionario</option>
@@ -28,7 +28,7 @@
                         {{/each}}
                     </select>
                 </div>
-                <div class="containerInputAgendamento">
+                <div class="containerInput">
                     <label for="inputServico">Nome do Cliente:</label>
                     <input type="text" class="input" name="inputCliente" required>
                 </div>

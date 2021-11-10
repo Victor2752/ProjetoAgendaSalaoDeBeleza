@@ -11,6 +11,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .container {
@@ -224,4 +226,9 @@ input:-webkit-autofill {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.antiBugNavbar {
+    height: 75px;
+    color: rgba(0, 0, 0, 0);
 }
