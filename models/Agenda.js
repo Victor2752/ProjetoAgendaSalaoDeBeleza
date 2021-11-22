@@ -21,6 +21,6 @@ const Agenda = db.sequelize.define('agenda', {
     },
 });
 
-// Agenda.sync({force: true});
+Agenda.sync({force: true});
 
 module.exports = Agenda;

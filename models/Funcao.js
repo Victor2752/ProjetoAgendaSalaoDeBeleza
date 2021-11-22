@@ -6,6 +6,6 @@ const Funcao = db.sequelize.define('funcoes', {
     }
 });
 
-// Funcao.sync({force: true});
+Funcao.sync({force: true});
 
 module.exports = Funcao;

@@ -3,7 +3,7 @@
     td {
         border-bottom: 1px solid #9CB2FF;
         text-align: center;
-        color: #000000;
+        color: #728adf;
     }
     table{
         margin: 20px;
@@ -47,11 +47,6 @@
             <button type="submit" class="btn btnAgendamento">Visualizar</a>
         </div>
     </form>
-    
-    {{!-- {{> agenda}}
-    <div class="containerTituloGrande">
-        <h2 class="tituloPequeno">{{dataValues.funcionario}} - {{dataValues.data}}</h2>
-    </div> --}}
 
     <div class="containerAdicionarAgendamento" style="margin-top: 10px;">
         <table style="width:95%;">
@@ -70,7 +65,7 @@
                 <td>{{dataValues.horainicio}} - {{dataValues.horafim}}</td>
                 <td>
                     <a href="/deletar/{{dataValues.id}}/{{dataValues.funcionario}}/{{dataValues.data}}">
-                        <button class="btn btnDeletar">Deletar</button>
+                        <button class="btn btnDeletar">Remover</button>
                     </a>
                 </td>
             </tr>

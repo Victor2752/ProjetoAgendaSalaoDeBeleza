@@ -193,8 +193,8 @@ input:-webkit-autofill {
 }
 
 .btnEditar {
-    border: solid #2c4fce 5px;
-    background-color: #587cff;
+    border: solid rgba(0, 0, 0, 0.1) 5px;
+    background-color: #6cd87e;
 }
 
 .inputData {

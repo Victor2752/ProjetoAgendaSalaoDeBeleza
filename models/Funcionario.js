@@ -9,6 +9,6 @@ const Funcionario = db.sequelize.define('funcionarios', {
     }
 });
 
-// Funcionario.sync({force: true});
+Funcionario.sync({force: true});
 
 module.exports = Funcionario;
